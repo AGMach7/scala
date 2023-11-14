@@ -43,24 +43,28 @@ Table of Contents:
   ### Declaring a Variable
 
    - Declaring a variable:
+    
+     In Scala, variables are used to store and manipulate data. There are two main types of variables: __`val`__ and __`var`__.
+     
+     The general format for daclaring a variable in scala is:
 
-   ```Scala
-    keyword variableName: DataType = Initial Value
-   ```
+     ```Scala
+      keyword variableName: DataType = Initial Value
+     ```
 
-   keyword
+     Where the _keyword_ is one of the following:
    
-   - val (value): value cannot be changed after initialization, it's __immutable__
-  
-     ```scala 
-     val x: Int = 10
-     ```
+      - `val` _(value)_: value cannot be changed after initialization, it's __immutable__
+      
+       ```scala 
+       val x: Int = 10
+       ```
 
-   - var (variable): value can be changed after initialization, it's __mutable__
-
-     ```scala
-     var y: String = "Hello"
-     ```
+      - `var` _(variable)_: value can be changed after initialization, it's __mutable__
+      
+       ```scala
+       var y: String = "Hello"
+       ```
 
   ### Data Types
 
@@ -130,7 +134,6 @@ Table of Contents:
   val doubleValue: Double = 42.5
   val intValue: Int = doubleValue.toInt // Be aware of potential loss of decimal precision
   ```
-
 
 ## Strings
 
