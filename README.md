@@ -47,29 +47,29 @@ Scala is a powerful and versatile programming language that combines object-orie
      
    The general format for daclaring a variable in scala is:
 
-    ```Scala
+  ```Scala
     keyword variableName: DataType = Initial Value
-    ```
+   ```
 
    Where the `keyword` is one of the following:
    
    - `val` _(value)_: value cannot be changed after initialization, it's __immutable__
       
-    ```scala 
+  ```scala 
      val x: Int = 10
-    ```
+  ```
 
    - `var` _(variable)_: value can be changed after initialization, it's __mutable__
       
-    ```scala
+  ```scala
      var y: String = "Hello"
-    ```
+  ```
 
   ### Data Types
 
    In Scala, every value has a type and each type is part of a type hierarchy. In a type hierarchy, the more generic types are at the top and as you go lower in the hierarchy, the types get more specific. Each type has a requirement of its own along with the requirements of all the types above it in the hierarchy.
 
-    ```
+   ```
     Any
     ├── AnyVal
     │  ├── Int
@@ -93,11 +93,12 @@ Scala is a powerful and versatile programming language that combines object-orie
     │  └── ...
     ├── Null
     └── Nothing
-    ```
+  ```
 
    NB: 
-    - `Null` is a subtype of all reference types (including _AnyRef_).
-    - `Nothing` is a subtype of all types, both reference and value types.
+
+   - `Null` is a subtype of all reference types (including _AnyRef_).
+   - `Nothing` is a subtype of all types, both reference and value types.
 
   ### Type Inference
 
