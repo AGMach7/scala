@@ -14,15 +14,12 @@ Scala is a powerful and versatile programming language that combines object-orie
 - [Control Structures](#control-structures)
 - [Functions](#functions)
 - [Classes and Objects](#classes-and-objects)
-- [Setup](#setup)
 - [Sources](#sources)
 
 ## A Scalable Language
 
   ### What is Scala?
-   "Scala is a general-purpose programming language providing support for both object-oriented programming and functional programming, and a strong static type system. Designed to be concise, many of Scala's design decisions aimed to address criticisms of Java."
-   
-   [Source](https://en.wikipedia.org/wiki/Scala_(programming_language))
+   "Scala is a general-purpose programming language providing support for both object-oriented programming and functional programming, and a strong static type system. Designed to be concise, many of Scala's design decisions aimed to address criticisms of Java."  [Source](https://en.wikipedia.org/wiki/Scala_(programming_language))
   
   ### Whay use Scala?
    The first answer to "Why use Scala?" is in its name: Scala stands for **SCA**lable **LA**nguage. It is designed to grow with the demands of its users, from writing small scripts to building massive systems for data processing, distributed computing, and more.
@@ -37,9 +34,7 @@ Scala is a powerful and versatile programming language that combines object-orie
    The most common job titles you'll see are variants of software engineer, and data engineer. You'll also see data scientist and ML engineer more frequently as companies in all industries realize the challenges of analyzing big data. These companies are adopting Scala alongside data processing tools like Apache Spark.
 
 ## Variables in Scala
-  "Variables are nothing but reserved memory locations to store values. This means that when you create a variable, you reserve some space in memory."
-
-  [Source](https://www.tutorialspoint.com/scala/scala_variables.htm)
+  "Variables are nothing but reserved memory locations to store values. This means that when you create a variable, you reserve some space in memory." [Source](https://www.tutorialspoint.com/scala/scala_variables.htm)
 
   ### Declaring a Variable
 
@@ -173,7 +168,7 @@ Scala is a powerful and versatile programming language that combines object-orie
    Explicitly mentioning the data type:
   
    ```scala
-   val myFirstString String	= "I'm a string"
+   val myFirstString String = "I'm a string"
    ```
 
    Using type inference:
@@ -334,9 +329,6 @@ Scala is a powerful and versatile programming language that combines object-orie
 
 
 ## Classes and Objects
-
-
-## Setup
 
 
 ## Sources
