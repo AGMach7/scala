@@ -317,6 +317,64 @@ Scala is a powerful and versatile programming language that combines object-orie
    ```
 
 ## Operating with Operators 
+  ### Functions/Methodes:
+   - Built-In Functions:
+     - Built-in functions are functions which are predefined by Scala and are part of their libraries.
+     - All we have to do to use them is call their function name.
+     - Built-in functions are known as methods. 
+
+     Examples:
+     - println 
+     - sorted 
+     - map
+     - filter 
+     - reduce 
+     - groupBy
+     - ...
+
+   - User-Defined Functions:
+     - User-defined functions are functions that users create themselves. We will cover this in another chapter
+
+  ### Calling a Function:
+   - In scala, calling a method is done using the dot operator (.) followed by the method's name. It's the _ordinary method call_:
+    ```scala
+     objectName.methodName(arguments)
+    ```
+   - There is another way to call a function, it is by using _operator notation_: 
+    ```scala
+     objectName methodName arguments
+    ```
+
+  ### Operators:
+   - Operators are Methodes:
+   
+
+  ### Methods vs Functions
+        1. A method can contain expressions that return values while a function cannot.
+        2. A method has an implicit this parameter whereas a function does not.
+        3. A method can take parameters but it must always end with a semicolon or curly braces.
+        Whereas a function ends with either a semicolon or curly brace depending on whether it returns value or not.
+        4. A method can also return values.
+        5. If you want to make your code more readable then instead of writing a method you can write a function.
+        5. A method can only perform operations on objects.
+        6. A method can access private members of its class.
+        7. A method can modify the state of its class.
+        8. A method can throw exceptions.
+        9. A method can override another method from superclass.
+        10. A method can be called without creating any instance of the class.
+        11. A method can be used inside other classes.
+        12. A method can be used outside the class where they were declared.
+        13. A method can be used within itself.
+        14. A method can be used recursively.
+        15. A method can be passed as argument to another method.
+        16. A method can be returned as result from another method.
+        17. A method can be assigned to variables.
+        18. A method can be stored in collections like List and Map.
+        19. A method can be used as anonymous inner class.
+        20. A method can have default value for parameters.
+        21. A method can have multiple types for single parameter.
+        22. A method can have vararg parameters which means zero or more than one parameters.
+        23. A method can have optional parameters which means you don’t need to provide all parameters when calling them.
 
 
 ## Collections
