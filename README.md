@@ -2,7 +2,7 @@
 
 **Basics of Scala programming language**
 
-Scala is a powerful and versatile programming language that combines object-oriented and functional programming paradigms. It runs on the Java Virtual Machine (JVM), making it interoperable with Java, and it's designed to be concise and expressive. Scala is particularly known for its scalability, making it suitable for anything from small scripts to large-scale, distributed systems.
+Welcome to the world of Scala, a versatile and powerful programming language that seamlessly blends object-oriented and functional programming paradigms. Whether you're a seasoned developer or just starting your programming journey, Scala has something unique to offer.
 
 **Table of Contents:**
 
@@ -21,7 +21,7 @@ Scala is a powerful and versatile programming language that combines object-orie
   ### What is Scala?
    "Scala is a general-purpose programming language providing support for both object-oriented programming and functional programming, and a strong static type system. Designed to be concise, many of Scala's design decisions aimed to address criticisms of Java."  [Source](https://en.wikipedia.org/wiki/Scala_(programming_language))
   
-  ### Whay use Scala?
+  ### Why use Scala?
    The first answer to "Why use Scala?" is in its name: Scala stands for **SCA**lable **LA**nguage. It is designed to grow with the demands of its users, from writing small scripts to building massive systems for data processing, distributed computing, and more.
 
    - _Scalability_: As the name suggests, Scala is scalable. It can seamlessly adapt to the evolving needs of your project, whether you're writing a quick script or developing complex, data-intensive applications.
