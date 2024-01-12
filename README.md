@@ -390,3 +390,16 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
 
 ## Sources
+
+- [Official website](https://www.scala-lang.org/)
+- [Latest version documentation](https://www.scala-lang.org/api/current/index.html)
+- [educative](https://www.educative.io/courses/learn-scala-from-scratch)
+- [tutorialspoint](https://www.tutorialspoint.com/scala/index.htm)
+- [Learning Scala Programming - GitHub repo](https://github.com/PacktPublishing/Learn-Scala-Programming/tree/master)
+- [Scala strings - GitHup repos](https://github.com/Baeldung/scala-tutorials/tree/master/scala-strings)
+- [Cheatsheet - 1](https://docs.scala-lang.org/cheatsheets/index.html)
+- [Cheatsheet - 2](https://gist.github.com/heathermiller/2ab9ef36910fdfdd20e9)
+- []()
+- []()
+- []()
+- []()
