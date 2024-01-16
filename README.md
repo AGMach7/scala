@@ -202,7 +202,7 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
   ### String Interpolation:
 
-   The __s__ String Interpolator
+   The __s__ String Interpolator: Prepending s to any string literal allows the usage of variables directly in the string.
    
    Formats:
    ```scala
@@ -214,14 +214,13 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
    Example:
    ```scala
    val name = "James"
-   val age = 30
-   println(s"$name is $age years old")  // "James is 30 years old"
-
-   println(s"2 + 2 = ${2 + 2}")   // "2 + 2 = 4"
+   val bDay = 2001
+   println(s"$name is ${2024-bDay} years old")  // "James is 23 years old"
    ```
 
-   The __f__ String Interpolator
-
+   The __f__ String Interpolator: Prepending `f` to any string literal allows the creation of simple formatted strings, similar to `printf` in other languages. When using the `f` interpolator, all variable references should be followed by a `printf`-style format string, like `%d`
+   
+   Formats:
    ```scala
    f"String $VariableIdentifier%FormatSpecifier String"
  
@@ -256,8 +255,9 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
    println(f"With specifying the width, we get $testWidth%-10d") // With specifying the width, we get        123
    ```
 
-   The __row__ String Interpolator:
-
+   The __row__ String Interpolator: The raw interpolator is similar to the `s` interpolator except that it performs no escaping of literals within the string
+   
+   Format:
    ```scala
    row"Optianal String EscSeq Optional String"
    ```
@@ -277,105 +277,225 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
    Example:
    ```scala
-   val filePath = "C:\\Users\\user\\Documents\\file.txt"
-   val rawString = raw"This is a raw string with backslashes: $filePath"
+   val sString = s"a\tb"
+   val rawString = raw"a\tb"
 
-   println(rawString) // This is a raw string with backslashes: C:\Users\user\Documents\file.txt
+   println(sString)  // a    b
+   println(rawString) // a\tb
    ```
 
   ### Comparing Strings:
 
+   In Scala, string comparison involves various methods for assessing equality, considering case sensitivity, and utilizing regular expressions:
+
+   - Check if two strings are equal:
    ```scala
    string1 == string2
-   string1.equals(string2)
-   string1.equalsIgnoreCase(string2) string1.matches(regex)
-   string1.compareTo(string2)
+
+   // Example: 
+   "hello" == "hello" // true
    ```
+   - Use the equals methode for equalitu comparison:
+   ```scala
+   string1.equals(string2)
+
+   // Example: 
+   "Hello".equals("hello") // false
+   ```
+   - Rerform  case-insensitive equality check:
+   ```scala
+   string1.equalsIgnoreCase(string2)
+
+   // Example: 
+   "Scala".equalsIgnoreCase("sCaLa") // true
+   ```
+   - Check if the string matches a regular expression:
+   ```scala
+   string1.matches(regex)
+
+   // Example: 
+   "12345".matches("\\d+") // true
+   ```
+   - Compare strings lexicographically:
+   ```scala
+   string1.compareTo(string2)
+
+   // Example: 
+   "apple".compareTo("banana") // -1
+   ```
+
   ### Updating Strings:
 
-   Finding patterns:
+   In the realm of string manipulation in Scala, the section on updating strings encompasses three essential operations: finding patterns, splitting strings, and replacing patterns:
+
+   - Finding patterns:
    ```scala
+   // Find the first occurrence of a pattern in the string
    val match1 = Regex.findFirstIn(stringToFindExpression) 
    match1.foreach(println)
 
+   // Find all occurrences of a pattern in the string
    val match2 = Regex.findAllIn(stringToFindExpression) 
    match2.foreach(println)
    ```
 
-   Splitting string:
+   - Splitting string:
    ```scala
+   // Split the string using a specified delimiter
    val names = "achraf, mohamed, ahmed".split(",") 
   names.foreach(println)
    ```
 
-   Replacing patterns
+   - Replacing patterns
    ```scala
-   String.replaceFirst("SearchExpression","ReplaceExpression") 
-   Regex.replaceFirstIn("SearchString","ReplaceExpression") 
-   String.replaceAll("SearchExpression","ReplaceExpression") 
+   // Replace the first occurrence of a pattern in the string
+   String.replaceFirst("SearchExpression","ReplaceExpression")
+
+   // Replace the first occurrence of a pattern using a regex
+   Regex.replaceFirstIn("SearchString","ReplaceExpression")
+
+   // Replace all occurrences of a pattern in the string
+   String.replaceAll("SearchExpression","ReplaceExpression")
+
+   // Replace all occurrences of a pattern using a regex
    Regex.replaceAllIn("SearchString","ReplaceExpression")
    ```
+## Operating with Operators
 
-## Operating with Operators 
-  ### Functions/Methodes:
-   - Built-In Functions:
-     - Built-in functions are functions which are predefined by Scala and are part of their libraries.
-     - All we have to do to use them is call their function name.
-     - Built-in functions are known as methods. 
+  ### Functions/Methods:
 
-     Examples:
-     - println 
-     - sorted 
-     - map
-     - filter 
-     - reduce 
-     - groupBy
-     - ...
+  - Built-In Functions:
 
-   - User-Defined Functions:
-     - User-defined functions are functions that users create themselves. We will cover this in another chapter
+    Built-in functions in Scala are predefined functions provided by the language and are part of its standard libraries. These functions, often referred to as methods, cover a wide range of functionalities and operations. Users can easily utilize these functions by invoking their names. Some common examples include:
+
+    - **`println`:** Outputs information to the console.
+    - **`sorted`:** Sorts elements in a collection.
+    - **`map`:** Applies a function to each element in a collection and returns a new collection.
+    - **`filter`:** Selects elements from a collection based on a specified condition.
+    - **`reduce`:** Aggregates elements in a collection to a single value using a specified operation.
+    - **`groupBy`:** Groups elements in a collection based on a provided key function.
+    - ...
+
+  - User-Defined Functions:
+
+    User-defined functions are functions created by users themselves. These functions are defined by the user to perform specific tasks or operations, providing a way to extend the functionality of the language beyond its built-in capabilities. User-defined functions will be covered in more detail in another chapter.
 
   ### Calling a Function:
-   - In scala, calling a method is done using the dot operator (.) followed by the method's name. It's the _ordinary method call_:
-    ```scala
-     objectName.methodName(arguments)
-    ```
-   - There is another way to call a function, it is by using _operator notation_: 
-    ```scala
-     objectName methodName arguments
-    ```
+
+  In Scala, calling a method involves using the dot operator (.) followed by the method's name, representing the ordinary method call. The syntax is as follows:
+
+  ```scala
+  objectName.methodName(arguments)
+  ```
+
+  Additionally, Scala supports another way of calling functions known as the **operator notation**:
+
+  ```scala
+  objectName methodName arguments
+  ```
+
+  In the operator notation, the method name is placed directly after the object or expression, and the parentheses are omitted. This notation offers a more concise and expressive way of calling methods in certain situations, contributing to Scala's flexibility and readability. Both the ordinary method call and operator notation are valid ways to invoke functions in Scala, providing developers with options based on their preferences and the context of the code.
+
+  Example:
+  ```Scala
+  val numbers = List(1, 2, 3, 4, 5)
+
+  // Calling the reduce method in the ordinary way
+  val sum1 = numbers.reduce((a, b) => a + b)
+  println(s"Sum using ordinary method call: $sum1") //Sum using ordinary method call: 15
+
+  // Calling the reduce method using operator notation
+  val sum2 = numbers reduce ((a,b) => a + b)
+  println(s"Sum using operator notation: $sum2") //Sum using operator notation: 15
+  ```
 
   ### Operators:
-   - Operators are Methodes:
+   Operators are Methodes! In Scala, operators are essentially methods. Unlike some other programming languages where operators are distinct from methods, Scala treats operators as syntactic sugar for method calls. This means that when you use an operator in Scala, you are actually calling a method with a special syntax.
+
+   For example, the addition operation `+` is treated as a method call in Scala. Instead of a traditional operator, it is implemented as a method named `+`:
    
+   ```scala
+   val result = 3 + 5
+   // In reality, it's the same as calling:
+   // val result = 3.+(5)
+   ```
 
-  ### Methods vs Functions
-        1. A method can contain expressions that return values while a function cannot.
-        2. A method has an implicit this parameter whereas a function does not.
-        3. A method can take parameters but it must always end with a semicolon or curly braces.
-        Whereas a function ends with either a semicolon or curly brace depending on whether it returns value or not.
-        4. A method can also return values.
-        5. If you want to make your code more readable then instead of writing a method you can write a function.
-        5. A method can only perform operations on objects.
-        6. A method can access private members of its class.
-        7. A method can modify the state of its class.
-        8. A method can throw exceptions.
-        9. A method can override another method from superclass.
-        10. A method can be called without creating any instance of the class.
-        11. A method can be used inside other classes.
-        12. A method can be used outside the class where they were declared.
-        13. A method can be used within itself.
-        14. A method can be used recursively.
-        15. A method can be passed as argument to another method.
-        16. A method can be returned as result from another method.
-        17. A method can be assigned to variables.
-        18. A method can be stored in collections like List and Map.
-        19. A method can be used as anonymous inner class.
-        20. A method can have default value for parameters.
-        21. A method can have multiple types for single parameter.
-        22. A method can have vararg parameters which means zero or more than one parameters.
-        23. A method can have optional parameters which means you don’t need to provide all parameters when calling them.
+   Here, the `+` operator is translated into a method call, and the expression is equivalent to `3.+(5)`.
 
+   This design choice provides consistency in the language, making operators more flexible and extensible. It also aligns with Scala's emphasis on a unified object-oriented approach, **_`treating everything as an object and every operation as a method call`_**.
+
+  ### Methods vs Functions:
+
+  1. **Expression and Return:**
+    - Both methods and functions in Scala can contain expressions that return values.
+
+  2. **Implicit `this` Parameter:**
+    - Methods have an implicit `this` parameter, while functions do not. This distinction is relevant when calling methods on instances.
+
+  3. **Parameters and Syntax:**
+    - Both methods and functions can take parameters. Methods must end with either a semicolon or curly braces. Functions end with a semicolon if they don't return a value, and with curly braces if they do.
+
+  4. **Return Values:**
+    - Both methods and functions can return values.
+
+  5. **Readability:**
+    - Both methods and functions contribute to code readability. The distinction here might be subjective.
+
+  6. **Operations on Objects:**
+    - Both methods and functions can perform operations on objects.
+
+  7. **Access to Private Members:**
+    - Both methods and functions can access private members of their classes.
+
+  8. **Modify Class State:**
+    - Both methods and functions can modify the state of their classes.
+
+  9. **Throw Exceptions:**
+    - Both methods and functions can throw exceptions.
+
+  10. **Method Override:**
+      - Both methods and functions can override another method from a superclass.
+
+  11. **Instance Creation:**
+      - Both methods and functions can be called without creating an instance of the class.
+
+  12. **Usage in Other Classes:**
+      - Both methods and functions can be used inside other classes.
+
+  13. **Usage Outside Class:**
+      - Both methods and functions can be used outside the class where they are declared.
+
+  14. **Usage Within Itself:**
+      - Both methods and functions can call themselves recursively.
+
+  15. **Passed as Arguments:**
+      - Both methods and functions can be passed as arguments to other methods/functions.
+
+  16. **Returned as Result:**
+      - Both methods and functions can be returned as results from other methods/functions.
+
+  17. **Assigned to Variables:**
+      - Both methods and functions can be assigned to variables.
+
+  18. **Stored in Collections:**
+      - Both methods and functions can be stored in collections like List and Map.
+
+  19. **Used as Anonymous Inner Class:**
+      - This point is more applicable to methods when used as SAM (Single Abstract Method) instances.
+
+  20. **Default Parameter Values:**
+      - Both methods and functions can have default values for parameters.
+
+  21. **Multiple Types for Single Parameter:**
+      - Both methods and functions can have parameters with multiple types.
+
+  22. **Vararg Parameters:**
+      - Both methods and functions can have varargs parameters.
+
+  23. **Optional Parameters:**
+      - Both methods and functions can have optional parameters using default values.
+
+  In Scala, the distinction between methods and functions is less rigid than in some other languages. Functions are essentially objects and can be treated as first-class citizens, while methods are associated with specific instances of classes or objects. The choice between them often depends on coding style and the context in which they are used.
 
 ## Collections
 
@@ -393,13 +513,14 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
 - [Official website](https://www.scala-lang.org/)
 - [Latest version documentation](https://www.scala-lang.org/api/current/index.html)
+- [Learn Scala | Scala Documentation](https://docs.scala-lang.org/)
 - [educative](https://www.educative.io/courses/learn-scala-from-scratch)
 - [tutorialspoint](https://www.tutorialspoint.com/scala/index.htm)
 - [Learning Scala Programming - GitHub repo](https://github.com/PacktPublishing/Learn-Scala-Programming/tree/master)
 - [Scala strings - GitHup repos](https://github.com/Baeldung/scala-tutorials/tree/master/scala-strings)
 - [Cheatsheet - 1](https://docs.scala-lang.org/cheatsheets/index.html)
 - [Cheatsheet - 2](https://gist.github.com/heathermiller/2ab9ef36910fdfdd20e9)
-- []()
+- [Scala Quick Reference v1.1](https://homepage.cs.uiowa.edu/~tinelli/classes/022/Fall13/Notes/scala-quick-reference.pdf)
 - []()
 - []()
 - []()
