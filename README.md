@@ -429,31 +429,31 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
   ### Methods vs Functions:
 
   1. **Expression and Return:**
-    - Both methods and functions in Scala can contain expressions that return values.
+   - Both methods and functions in Scala can contain expressions that return values.
 
   2. **Implicit `this` Parameter:**
-    - Methods have an implicit `this` parameter, while functions do not. This distinction is relevant when calling methods on instances.
+     - Methods have an implicit `this` parameter, while functions do not. This distinction is relevant when calling methods on instances.
 
   3. **Parameters and Syntax:**
-    - Both methods and functions can take parameters. Methods must end with either a semicolon or curly braces. Functions end with a semicolon if they don't return a value, and with curly braces if they do.
+     - Both methods and functions can take parameters. Methods must end with either a semicolon or curly braces. Functions end with a semicolon if they don't return a value, and with curly braces if they do.
 
   4. **Return Values:**
-    - Both methods and functions can return values.
+     - Both methods and functions can return values.
 
   5. **Readability:**
-    - Both methods and functions contribute to code readability. The distinction here might be subjective.
+     - Both methods and functions contribute to code readability. The distinction here might be subjective.
 
   6. **Operations on Objects:**
-    - Both methods and functions can perform operations on objects.
+     - Both methods and functions can perform operations on objects.
 
   7. **Access to Private Members:**
-    - Both methods and functions can access private members of their classes.
+     - Both methods and functions can access private members of their classes.
 
   8. **Modify Class State:**
-    - Both methods and functions can modify the state of their classes.
+     - Both methods and functions can modify the state of their classes.
 
   9. **Throw Exceptions:**
-    - Both methods and functions can throw exceptions.
+     - Both methods and functions can throw exceptions.
 
   10. **Method Override:**
       - Both methods and functions can override another method from a superclass.
@@ -572,9 +572,8 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
   |---|---|
   |<img src="resources/collections-mutable-diagram.svg" height="300">|<img src="resources/collections-immutable-diagram.svg" height="300">|
 
-  |Legend:|
-  |---|
-  |<img src="resources/collections-legend-diagram.svg" height="200">|
+  Legend:
+  <img src="resources/collections-legend-diagram.svg" height="200">
 
   #### Common Operations:
 
