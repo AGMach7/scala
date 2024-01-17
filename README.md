@@ -502,6 +502,7 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
   |<img src="resources/collections-mutable-diagram.svg" height="300">|<img src="resources/collections-immutable-diagram.svg" height="300">|
 
   Legend:
+
   <img src="resources/collections-legend-diagram.svg" height="200">
 
   #### Common Operations:
@@ -610,9 +611,139 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
 ## Functions
 
+  Functions are a fundamental building block in Scala, combining both object-oriented and functional programming paradigms. In Scala, functions are first-class citizens, meaning they can be treated like any other value, allowing for powerful and expressive programming constructs.
+
+  #### Defining Functions:
+
+  1. **Method Definition:**
+    - The most common way to define a function is as a method within a class or object.
+
+     ```scala
+     object MathOperations {
+       def add(x: Int, y: Int): Int = x + y
+     }
+
+     val sum = MathOperations.add(3, 5)
+     ```
+
+  2. **Anonymous Functions (Function Literals):**
+    - An anonymous function, also known as a function literal, is a concise way to define a function without explicitly giving it a name. It is a syntactic construct for defining a function on the fly. In Scala, anonymous functions are created using the syntax `(parameters) => expression`:
+
+     ```scala
+     val add: (Int, Int) => Int = (x, y) => x + y
+     ```
+
+     Here, `(x, y) => x + y` is an anonymous function that takes two parameters and returns their sum. Anonymous functions are often used for short-lived, local operations.
+
+  3. **Function Values (Named Functions):**
+
+    A function value, on the other hand, refers to a function treated as a first-class value in Scala. In Scala, functions are first-class citizens, which means they can be assigned to variables, passed as parameters to other functions, and returned as results from other functions. A function value is essentially an instance of a function type.
+
+     ```scala
+     val add: (Int, Int) => Int = (x, y) => x + y
+     ```
+
+     Here, `add` is a function value. It is a variable that holds a reference to an anonymous function. Function values can be passed around and used in a variety of ways, making them powerful for functional programming constructs.
+
+  In Scala, both anonymous functions and function values contribute to the language's support for functional programming, but they refer to slightly different concepts.
+  
+  In many cases, you'll see anonymous functions used to create function values. The anonymous function is the literal representation of the function's behavior, and the function value is the variable that holds this behavior for later use.
+
+  #### Higher-Order Functions:
+
+  Scala supports higher-order functions, which are functions that take other functions as parameters or return functions as results. This enables functional programming patterns such as map, filter, and reduce.
+
+  ```scala
+  val numbers = List(1, 2, 3, 4, 5)
+
+  // Using map to transform each element
+  val squared = numbers.map(x => x * x)
+
+  // Using filter to select elements based on a condition
+  val evens = numbers.filter(x => x % 2 == 0)
+
+  // Using reduce to aggregate elements
+  val sum = numbers.reduce((x, y) => x + y)
+  ```
+
+  #### Currying:
+
+  Currying is a technique where a function with multiple parameters is transformed into a series of functions, each taking a single parameter. This allows for partial application and more flexible function composition.
+
+  ```scala
+  def add(x: Int)(y: Int): Int = x + y
+
+  val add3 = add(3) _  // Partial application
+  val result = add3(5)  // Evaluates to 8
+  ```
+
+  #### Pattern Matching in Functions:
+
+  Pattern matching is a powerful feature in Scala that can be used within functions to match different cases and execute corresponding logic.
+
+  ```scala
+  def describe(x: Any): String = x match {
+    case s: String => s"Input is a string: $s"
+    case i: Int => s"Input is an integer: $i"
+    case _ => "Unknown input"
+  }
+
+  val description = describe(42)
+  ```
+
+  #### Recursion and Tail-Recursion:
+
+  - `Recursion` is a programming technique where a function calls itself in its definition. It's a way to solve problems by breaking them down into smaller instances of the same problem. Recursive functions have a base case (a condition where the function stops calling itself) and a recursive case (where the function calls itself with modified arguments).
+
+    Example of a simple recursive function to calculate factorial:
+
+    ```scala
+    def factorial(n: Int): Int =
+      if (n <= 0) 1
+      else n * factorial(n - 1)
+    ```
+
+    In the above example, the `factorial` function calls itself with a smaller argument until it reaches the base case (`n <= 0`), at which point it returns 1.
+
+  - `Tail recursion` is a specific form of recursion where the recursive call is the last operation in the function. In other words, the result of the recursive call is immediately returned without any additional computation. Tail recursion is important in functional programming because it allows the compiler to optimize the recursion into an iterative loop, avoiding stack overflow issues for deep recursive calls.
+
+    Example of a tail-recursive version of the factorial function:
+
+    ```scala
+    def factorial(n: Int): Int = {
+      @scala.annotation.tailrec
+      def factorialHelper(acc: Int, remaining: Int): Int =
+        if (remaining <= 0) acc
+        else factorialHelper(acc * remaining, remaining - 1)
+
+      factorialHelper(1, n)
+    }
+    ```
+
+    In this tail-recursive version, the recursive call (`factorialHelper`) is the last operation, and there are no pending computations after the recursive call. The `@tailrec` annotation is used to indicate to the compiler that the function is expected to be tail-recursive.
+
+  - The key difference between simple recursion and tail recursion lies in how they handle the call stack. In simple recursion, each recursive call adds a new frame to the call stack, potentially leading to a stack overflow for deep recursive calls. In tail recursion, the compiler can optimize the recursion into an iterative loop, eliminating the need for additional stack frames.
+
+    Tail recursion is generally preferred in functional programming for its efficiency and avoidance of stack overflow issues. Scala provides the `@tailrec` annotation to help developers ensure that their functions are indeed tail-recursive, allowing the compiler to perform optimizations when possible. It's important to note that tail recursion optimizations may not be applied if the recursive call is not in a tail position, emphasizing the need for proper tail recursion patterns.
+
+  Watch these two videos for further explanation: 
+  - [How to Sort Lists with Tail Recursion in Scala | Rock the JVM](https://www.youtube.com/watch?v=YKwBBe3FlAM)
+  - [Tail Recursion in Scala](https://www.youtube.com/watch?v=hjY_mC7dPxc)
+
+  #### Function Composition:
+
+  Function composition allows combining multiple functions to create a new function. Scala provides a concise syntax for function composition using the `andThen` or `compose` methods.
+
+  ```scala
+  val addOne: Int => Int = _ + 1
+  val double: Int => Int = _ * 2
+
+  val addOneAndDouble: Int => Int = addOne andThen double
+  val result = addOneAndDouble(3)  // Evaluates to 8
+  ```
 
 ## Classes and Objects
-
+  
 
 ## Sources
 
@@ -620,13 +751,12 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 - [Latest Version Documentation](https://www.scala-lang.org/api/current/index.html)
 - [Learn Scala | Scala Documentation](https://docs.scala-lang.org/)
 - [educative](https://www.educative.io/courses/learn-scala-from-scratch)
-- [tutorialspoint](https://www.tutorialspoint.com/scala/index.htm)
+- [Tutorialspoint](https://www.tutorialspoint.com/scala/index.htm)
+- [Javapoint](https://www.javatpoint.com/scala-tutorial)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/scala-programming-language/?ref=outind)
 - [Learning Scala Programming - GitHub repo](https://github.com/PacktPublishing/Learn-Scala-Programming/tree/master)
 - [Scala strings - GitHup repo](https://github.com/Baeldung/scala-tutorials/tree/master/scala-strings)
 - [Cheatsheet - 1](https://docs.scala-lang.org/cheatsheets/index.html)
 - [Cheatsheet - 2](https://gist.github.com/heathermiller/2ab9ef36910fdfdd20e9)
 - [Scala Quick Reference v1.1](https://homepage.cs.uiowa.edu/~tinelli/classes/022/Fall13/Notes/scala-quick-reference.pdf)
-- [Programming in Scala, First Edition
-by Martin Odersky, Lex Spoon, and Bill Venners](https://www.artima.com/pins1ed/index.html#TOC)
-- []()
-- []()
+- [Programming in Scala, First Edition by Martin Odersky, Lex Spoon, and Bill Venners](https://www.artima.com/pins1ed/index.html#TOC)
