@@ -502,6 +502,89 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
 ## Control Structures 
 
+  Scala keeps it simple with just six built-in control structures, a deliberate choice that aligns with the language's philosophy of allowing users to <u>**create their own control structures**</u> when needed. This feature, known as **_control abstraction_**, falls outside the scope of this course but underscores Scala's flexibility.
+
+  Control structures in Scala, including _if-else_ statements and _loops_, possess a distinctive trait – <u>they return values just like functions</u>. This characteristic reflects Scala's fusion of a functional approach within an imperative paradigm. This means you can use control structures in expressions, eliminating the need for temporary variables and leading to cleaner, more concise code.
+
+  **Examples:**
+
+  1. **Custom Control Structure - `repeat`:**
+    The following example demonstrates the creation of a custom control structure named `repeat`. This structure takes an integer `n` and a block of code, executing the block `n` times.
+
+     ```scala
+      def repeat(n: Int)(block: => Unit): Unit = {
+        var i = 0
+        while (i < n) {
+          block
+          i += 1
+        }
+      }
+
+      // Using the custom control structure
+      repeat(3) {
+        println("Hello, world!")
+      }
+     ```
+
+  2. **If-Else Expression:**
+    Control structures can be used in expressions, as illustrated by the following if-else statement:
+
+     ```scala
+      val a = 5
+      val b = 7
+      val max = if (a > b) a else b
+     ```
+
+  3. **Pattern Matching:**
+    Scala's powerful pattern matching allows for expressive control flow based on matched patterns. Here's an example categorizing days into workdays and weekends:
+
+     ```scala
+      val day = "Monday"
+      val result = day match {
+        case "Monday" | "Tuesday" => "Workday"
+        case "Saturday" | "Sunday" => "Weekend"
+        case _ => "Unknown"
+      }
+     ```
+
+  4. **For Comprehensions:**
+    Scala's `for` comprehensions offer a concise way to express iterations, filtering, and transformations over collections.
+
+     ```scala
+      val numbers = List(1, 2, 3, 4, 5)
+      val squared = for (n <- numbers) yield n * n
+     ```
+
+  5. **Try-Catch-Finally:**
+    Scala supports the traditional try-catch-finally construct for structured exception handling.
+
+     ```scala
+      val result = try {
+        // code that may throw an exception
+        10 / 0
+      } catch {
+        case e: ArithmeticException => -1
+      } finally {
+        // cleanup code
+        println("Finally block executed.")
+      }
+     ```
+
+  6. **Match Expressions with Case Classes:**
+    Match expressions become even more powerful when working with case classes, allowing for deconstruction and extraction of values.
+
+     ```scala
+      case class Person(name: String, age: Int)
+
+      val person = Person("Alice", 30)
+
+      val greeting = person match {
+        case Person("Alice", age) if age < 40 => "Hi, Alice!"
+        case Person(name, age) => s"Hello, $name!"
+      }
+     ```
+
+  See more on the [officiel documentation](https://docs.scala-lang.org/scala3/book/control-structures.html) 
 
 ## Functions
 
@@ -511,8 +594,8 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
 ## Sources
 
-- [Official website](https://www.scala-lang.org/)
-- [Latest version documentation](https://www.scala-lang.org/api/current/index.html)
+- [Official Website](https://www.scala-lang.org/)
+- [Latest Version Documentation](https://www.scala-lang.org/api/current/index.html)
 - [Learn Scala | Scala Documentation](https://docs.scala-lang.org/)
 - [educative](https://www.educative.io/courses/learn-scala-from-scratch)
 - [tutorialspoint](https://www.tutorialspoint.com/scala/index.htm)
@@ -521,6 +604,7 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 - [Cheatsheet - 1](https://docs.scala-lang.org/cheatsheets/index.html)
 - [Cheatsheet - 2](https://gist.github.com/heathermiller/2ab9ef36910fdfdd20e9)
 - [Scala Quick Reference v1.1](https://homepage.cs.uiowa.edu/~tinelli/classes/022/Fall13/Notes/scala-quick-reference.pdf)
-- []()
+- [Programming in Scala, First Edition
+by Martin Odersky, Lex Spoon, and Bill Venners](https://www.artima.com/pins1ed/index.html#TOC)
 - []()
 - []()
