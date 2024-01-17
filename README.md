@@ -95,6 +95,8 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
    - `Null` is a subtype of all reference types (including _AnyRef_).
    - `Nothing` is a subtype of all types, both reference and value types.
 
+  <img src="resources/dataTypes.png" width="700">
+
   ### Type Inference
 
    Scala has a powerful type inference system, allowing you to omit explicit type declarations when the compiler can infer the type:
@@ -499,6 +501,98 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 
 ## Collections
 
+  Scala offers a rich set of collection types that serve various purposes, from storing and manipulating data to facilitating functional programming constructs. Collections can be broadly categorized into two main types: **Immutable Collections** and **Mutable Collections.**
+
+  "All collection classes are found in the package `scala.collection` or one of its sub-packages mutable and immutable. Most collection classes needed by client code exist in three variants, which are located in packages `scala.collection`, `scala.collection.immutable`, and `scala.collection.mutable`, respectively. Each variant has different characteristics with respect to mutability. [...] The following figure shows all collections in package scala.collection. These are all high-level abstract classes or traits, which generally have mutable as well as immutable implementations." ([source](https://docs.scala-lang.org/overviews/collections-2.13/overview.html#:~:text=All%20collection%20classes,respect%20to%20mutability))
+
+ <img src="resources/collections-diagram.svg" width="700">
+
+  #### Immutable Collections:
+
+  Immutable collections in Scala are designed to be unmodifiable once created. They provide safety and thread-safety, making them suitable for functional programming paradigms.
+
+  1. **List:**
+    Lists are ordered collections with a linear structure. Elements can be added or removed, but the list itself remains immutable.
+
+     ```scala
+     val numbers = List(1, 2, 3, 4, 5)
+     ```
+
+  2. **Set:**
+    Sets are collections of distinct elements with no defined order. They are useful for operations like intersection and union.
+
+     ```scala
+     val uniqueNumbers = Set(1, 2, 3, 4, 5)
+     ```
+
+  3. **Map:**
+    Maps are key-value pairs, allowing the association of values with unique keys. Immutable maps cannot be modified once created.
+
+     ```scala
+     val ages = Map("Alice" -> 30, "Bob" -> 25, "Charlie" -> 35)
+     ```
+
+  #### Mutable Collections:
+
+  Mutable collections, on the other hand, support modification after creation. While they offer mutability, developers need to be cautious about potential side effects.
+
+  1. **Mutable List:**
+    A mutable version of the list that allows in-place modification of elements.
+
+     ```scala
+     import scala.collection.mutable.ListBuffer
+
+     val mutableNumbers = ListBuffer(1, 2, 3, 4, 5)
+     mutableNumbers += 6
+     ```
+
+  2. **Mutable Set:**
+    Similar to the mutable list, a mutable set enables adding and removing elements in-place.
+
+     ```scala
+     import scala.collection.mutable.Set
+ 
+     val mutableUniqueNumbers = Set(1, 2, 3, 4, 5)
+     mutableUniqueNumbers += 6
+     ```
+
+  3. **Mutable Map:**
+    Mutable maps allow for the addition, removal, and modification of key-value pairs.
+
+     ```scala
+     import scala.collection.mutable.Map
+
+     val mutableAges = Map("Alice" -> 30, "Bob" -> 25, "Charlie" -> 35)
+     mutableAges += ("David" -> 40)
+     ```
+  
+  The following figures show all collections in packages `scala.collection.mutable` and `scala.collection.immutable`:
+
+  |mutable|immutable|
+  |---|---|
+  |<img src="resources/collections-mutable-diagram.svg" height="300">|<img src="resources/collections-immutable-diagram.svg" height="300">|
+
+  |Legend:|
+  |---|
+  |<img src="resources/collections-legend-diagram.svg" height="200">|
+
+  #### Common Operations:
+
+  Scala collections support a variety of common operations, whether immutable or mutable. These operations include mapping, filtering, folding, and more.
+
+  **Example - Mapping and Filtering:**
+
+   ```scala
+   val numbers = List(1, 2, 3, 4, 5)
+
+   // Map operation
+   val squared = numbers.map(n => n * n)
+
+   // Filter operation
+   val evens = numbers.filter(n => n % 2 == 0)
+   ```
+
+  Understanding and leveraging these collections, along with their operations, is fundamental to writing expressive and efficient Scala code. Whether you prioritize immutability for functional programming or mutability for performance, Scala's collections offer a versatile toolbox to suit your needs.
 
 ## Control Structures 
 
@@ -584,7 +678,7 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
       }
      ```
 
-  See more on the [officiel documentation](https://docs.scala-lang.org/scala3/book/control-structures.html) 
+  See more on the [official documentation](https://docs.scala-lang.org/scala3/book/control-structures.html) 
 
 ## Functions
 
@@ -600,7 +694,7 @@ Welcome to the world of Scala, a versatile and powerful programming language tha
 - [educative](https://www.educative.io/courses/learn-scala-from-scratch)
 - [tutorialspoint](https://www.tutorialspoint.com/scala/index.htm)
 - [Learning Scala Programming - GitHub repo](https://github.com/PacktPublishing/Learn-Scala-Programming/tree/master)
-- [Scala strings - GitHup repos](https://github.com/Baeldung/scala-tutorials/tree/master/scala-strings)
+- [Scala strings - GitHup repo](https://github.com/Baeldung/scala-tutorials/tree/master/scala-strings)
 - [Cheatsheet - 1](https://docs.scala-lang.org/cheatsheets/index.html)
 - [Cheatsheet - 2](https://gist.github.com/heathermiller/2ab9ef36910fdfdd20e9)
 - [Scala Quick Reference v1.1](https://homepage.cs.uiowa.edu/~tinelli/classes/022/Fall13/Notes/scala-quick-reference.pdf)
