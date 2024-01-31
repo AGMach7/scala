@@ -1,6 +1,12 @@
-<h1 style="text-align:center;"> <img src="resources/scala-spiral.png" alt="Scala Logo" width="25"> THE SCALA PROGRAMMING LANGUAGE</h1>
+<div align="center">
+  <h1><img src="resources/scala-spiral.png" alt="Scala Logo" width="25"> THE SCALA PROGRAMMING LANGUAGE</h1>
+  <strong>Basics of Scala Programming Language.</strong><br>
+</div>
+<br>
 
-<h3 style="text-align:center;">Basics of Scala Programming Language</h3>
+<!-- <h1 style="text-align:center;"> <img src="resources/scala-spiral.png" alt="Scala Logo" width="25"> THE SCALA PROGRAMMING LANGUAGE</h1>
+
+<h3 style="text-align:center;">Basics of Scala Programming Language</h3> -->
 
 <p>Welcome to the world of Scala! This tutorial will guide you through the fundamentals of Scala programming, exploring its versatile features that combine object-oriented and functional paradigms. Whether you're a seasoned developer or a programming novice, Scala has something unique to offer. Let's embark on this journey into the basics of Scala programming.</p>
 
