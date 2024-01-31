@@ -12,18 +12,32 @@
 
 ## Table of Contents:
 
-- [A Scalable Language](#a-scalable-language)
-- [Variables in Scala](#variables-in-scala)
-- [Strings](#strings)
-- [Operating with Operators](#operating-with-operators)
-- [Collections](#collections)
-- [Control Structures](#control-structures)
-- [Functions](#functions)
-- [Classes and Objects](#classes-and-objects)
-- [What's Next?](#whats-next)
-- [Sources](#sources)
+<ol>
+  <li><a href="#1-a-scalable-language">A Scalable Language</a></li>
+  <li><a href="#2-variables-in-scala">Variables in Scala</a></li>
+  <li><a href="#3-strings">Strings</a></li>
+  <li><a href="#4-operating-with-operators">Operating with Operators</a></li>
+  <li><a href="#5-collections">Collections</a></li>
+  <li><a href="#6-control-structures">Control Structures</a></li>
+  <li><a href="#7-functions">Functions</a></li>
+  <li><a href="#8-classes-and-objects">Classes and Objects</a></li>
+  <li><a href="#9-whats-next">What's Next?</a></li>
+  <li><a href="#sources">Sources</a></li>
+</ol>
 
-## A Scalable Language
+
+  <!-- - [1. A Scalable Language](#1-a-scalable-language)
+  - [2. Variables in Scala](#2-variables-in-scala)
+  - [3. Strings](#3-strings)
+  - [4. Operating with Operators](#4-operating-with-operators)
+  - [5. Collections](#5-collections)
+  - [6. Control Structures](#6-control-structures)
+  - [7. Functions](#7-functions)
+  - [8. Classes and Objects](#8-classes-and-objects)
+  - [9. What's Next?](#9-whats-next)
+  - [Sources](#sources) -->
+
+## 1. A Scalable Language
 
   ### What is Scala?
    "Scala is a general-purpose programming language providing support for both object-oriented programming and functional programming, and a strong static type system. Designed to be concise, many of Scala's design decisions aimed to address criticisms of Java."  [Source](https://en.wikipedia.org/wiki/Scala_(programming_language))
@@ -40,7 +54,7 @@
   ### Who uses Scala?
    The most common job titles you'll see are variants of software engineer, and data engineer. You'll also see data scientist and ML engineer more frequently as companies in all industries realize the challenges of analyzing big data. These companies are adopting Scala alongside data processing tools like Apache Spark.
 
-## Variables in Scala
+## 2. Variables in Scala
   "Variables are nothing but reserved memory locations to store values. This means that when you create a variable, you reserve some space in memory." [Source](https://www.tutorialspoint.com/scala/scala_variables.htm)
 
   ### Declaring a Variable
@@ -177,7 +191,7 @@
   val intValue: Int = doubleValue.toInt // Be aware of potential loss of decimal precision
   ```
 
-## Strings
+## 3. Strings
   ### Declaring a String:
 
    - Explicitly mentioning the data type:
@@ -376,7 +390,7 @@
    Regex.replaceAllIn("SearchString","ReplaceExpression")
    ```
 
-## Operating with Operators
+## 4. Operating with Operators
 
   ### Functions/Methods:
 
@@ -442,7 +456,7 @@
 
   In Scala, the distinction between methods and functions is less rigid than in some other languages. Functions are essentially objects and can be treated as first-class citizens, while methods are associated with specific instances of classes or objects. The choice between them often depends on coding style and the context in which they are used.
 
-## Collections
+## 4. Collections
 
   Scala's rich set of collection types plays a crucial role in storing and manipulating data, offering both **immutability** and **mutability** to cater to diverse programming needs.
 
@@ -537,7 +551,7 @@
 
   Understanding and leveraging these collections, along with their operations, is fundamental to writing expressive and efficient Scala code. Whether you prioritize immutability for functional programming or mutability for performance, Scala's collections offer a versatile toolbox to suit your needs.
 
-## Control Structures 
+## 5. Control Structures 
 
   Scala keeps it simple with just six built-in control structures, a deliberate choice that aligns with the language's philosophy of allowing users to <u>**create their own control structures**</u> when needed. This feature, known as **_control abstraction_**, falls outside the scope of this course but underscores Scala's flexibility.
 
@@ -625,7 +639,7 @@
 
   For more in-depth information on Scala Control Structures, refer to the [official Scala documentation](https://docs.scala-lang.org/scala3/book/control-structures.html).
 
-## Functions
+## 6. Functions
 
   Functions are a fundamental building block in Scala, combining both object-oriented and functional programming paradigms. In Scala, functions are first-class citizens, meaning they can be treated like any other value, allowing for powerful and expressive programming constructs.
 
@@ -758,7 +772,7 @@
   val result = addOneAndDouble(3)  // Evaluates to 8
   ```
 
-## Classes and Objects
+## 7. Classes and Objects
 
   In Scala, classes and objects are fundamental building blocks for organizing code in an object-oriented and functional manner. Classes serve as blueprints for creating objects, and objects are instances of those classes.
 
@@ -908,7 +922,7 @@
 
   For more, check [SCALA 3 — BOOK | TOOLS](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#classes)
 
-## What's Next?
+## 8. What's Next?
 
   Congratulations on gaining a solid understanding of fundamental concepts in Scala, including functions, control structures, collections, classes, and objects. As you continue your Scala journey, consider exploring the following topics to deepen your knowledge and broaden your programming skills:
 
